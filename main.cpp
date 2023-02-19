@@ -1,6 +1,6 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
-
+//ваня гнида на игноре :З
 
 int main(int argc, char *argv[])
 {
