@@ -4,5 +4,5 @@ Window {
     width: 640
     height: 480
     visible: true
-    title: qsTr("Ваня пидор")
+    title: qsTr("Міша підор")
 }
