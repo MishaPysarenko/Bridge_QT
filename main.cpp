@@ -1,7 +1,5 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
-//ваня гнида на игноре :З
-//а ти не гнида?
 
 int main(int argc, char *argv[])
 {
