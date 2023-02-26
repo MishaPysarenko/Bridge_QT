@@ -7,6 +7,7 @@ class Client
 {
 public:
     Client();
+
 };
 
 #endif // CLIENT_H
