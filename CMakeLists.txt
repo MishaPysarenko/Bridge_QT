@@ -9,6 +9,12 @@ find_package(Qt6 6.2 COMPONENTS Quick REQUIRED)
 
 qt_add_executable(appBridge
     main.cpp
+    appengine.cpp
+    appengine.h
+    client.cpp
+    client.h
+    server.cpp
+    server.h
 )
 
 qt_add_qml_module(appBridge
