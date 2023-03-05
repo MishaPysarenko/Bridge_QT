@@ -1,4 +1,6 @@
-import QtQuick
+import QtQuick 2.12
+import QtQuick.Window 2.12
+import Qt.labs.qmlmodels 1.0
 //кароч, тебе подсказда на будущие, если будут проблемы с CMake "такое бывает при добаление новых файлов" то зайди в "CMakeLists.txt"
 //и добавь в ручную название файлов, хз но скорее всего коментарии я там не оставлю, по месту разберешься, но у меня отдельное место, у тебя отдельно
 
@@ -11,4 +13,41 @@ Window {
     height: 480
     visible: true
     title: qsTr("Hello World")
+    TableView {
+        anchors.fill: parent
+        columnSpacing: 1
+        rowSpacing: 1
+        clip: true
+
+        model: TableModel {
+            TableModelColumn { display: "name" }
+            TableModelColumn { display: "color" }
+
+            rows: [
+                {
+                    "name": "cat",
+                    "color": "black"
+                },
+                {
+                    "name": "dog",
+                    "color": "brown"
+                },
+                {
+                    "name": "bird",
+                    "color": "white"
+                }
+            ]
+        }
+
+        delegate: Rectangle {
+            implicitWidth: 100
+            implicitHeight: 50
+            border.width: 1
+
+            Text {
+                text: display
+                anchors.centerIn: parent
+            }
+        }
+    }
 }
