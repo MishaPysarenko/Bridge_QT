@@ -11,7 +11,8 @@ class appEngine : public QObject
     Q_OBJECT
 public:
     explicit appEngine(QObject *parent = nullptr);
-
+    Q_INVOKABLE bool bIsCreateGame(short int iAmountPlayers = 2);
+    Q_INVOKABLE bool bIsJoinGame();
 signals:
 
 };
