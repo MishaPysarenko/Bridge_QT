@@ -2,7 +2,6 @@
 #define APPENGINE_H
 
 #include <QObject>
-
 #include "server.h"
 #include "client.h"
 
