@@ -3,7 +3,7 @@
 #include <QTcpServer>
 #include <QTcpSocket>
 #include <QVector>
-
+#include "tgamelog.h"
 class Server : public QTcpServer
 {
 public:
@@ -11,8 +11,8 @@ public:
     QTcpSocket* socket;
 private:
     QVector<QTcpSocket*> Sockets;
-    //
-    void SendToClient();
+    QByteArray Data;
+    void SendToClient(TGameLog log);
 public slots:
     void incomingConnetion(qintptr socketDescription);
     void slotReadyRead();

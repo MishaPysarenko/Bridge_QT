@@ -15,10 +15,10 @@ qt_add_executable(appBridge
     client.h
     server.cpp
     server.h
-    cplayingcard.cpp
     cplayingcard.h
     cgameengine.h
     cgameengine.cpp
+    tgamelog.h
 )
 
 qt_add_qml_module(appBridge

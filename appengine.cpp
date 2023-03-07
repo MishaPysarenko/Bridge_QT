@@ -8,12 +8,13 @@ appEngine::appEngine(QObject *parent)
 
 bool appEngine::bIsCreateGame(short int iAmountPlayers)
 {
-
+    Server *server = new Server;
     return true;
 }
 
 bool appEngine::bIsJoinGame()
 {
+    Client *client = new Client;
 
     return true;
 }

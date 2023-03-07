@@ -1,11 +1,10 @@
 #ifndef CPLAYINGCARD_H
 #define CPLAYINGCARD_H
-
-
 class CPlayingCard
 {
 public:
-    CPlayingCard();
-};
+    char card_suit;
+    unsigned short int card_value;
 
+};
 #endif // CPLAYINGCARD_H
