@@ -51,6 +51,7 @@ Window{
             anchors.horizontalCenter: parent.horizontalCenter
             text: "Грати"
             onClicked: debug.text = "створення гри ще не доступно"
+            onDoubleClicked: debug.text= "потерпиш трохи, соси хуй!"
         }
 
         Button
