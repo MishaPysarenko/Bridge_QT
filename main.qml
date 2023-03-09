@@ -40,6 +40,7 @@ Window{
         anchors.centerIn: parent
         Text
         {
+           anchors.horizontalCenter: parent.horizontalCenter
             id: name
             font.bold: true
             text: qsTr("Bridge")
@@ -47,16 +48,19 @@ Window{
         }
         Button
         {
+            anchors.horizontalCenter: parent.horizontalCenter
             text: "Грати"
             onClicked: debug.text = "створення гри ще не доступно"
         }
 
         Button
         {
+           anchors.horizontalCenter: parent.horizontalCenter
             text: "Налаштування"
             onClicked: debug.text = "налаштування гри ще не готові"
         }
         Text {
+            anchors.horizontalCenter: parent.horizontalCenter
             id: debug
             text: qsTr("Debug_text")
         }
