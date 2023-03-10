@@ -25,6 +25,16 @@ qt_add_qml_module(appBridge
     URI Bridge
     VERSION 1.0
     QML_FILES main.qml 
+    appengine.cpp
+    appengine.h
+    client.cpp
+    client.h
+    server.cpp
+    server.h
+    cplayingcard.h
+    cgameengine.h
+    cgameengine.cpp
+    tgamelog.h
 )
 
 set_target_properties(appBridge PROPERTIES

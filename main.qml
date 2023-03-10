@@ -1,4 +1,5 @@
 import QtQuick 2.12
+//import QMLIntergrationQt6 1.0
 import QtQuick.Window 2.12
 import Qt.labs.qmlmodels 1.0
 import QtQuick.Controls
@@ -14,37 +15,39 @@ Window{
     height: 500
     visible: true
     color: "aqua"
-  Column
- {
+    Column
+    {
+        Button
+        {
+            text: qsTr("підключитися до гри")
+            onClicked: logics.bIsJoinGame();
+        }
+        Button
+        {
+            text: qsTr("створити сервер")
+            onClicked: logics.bIsCreateGame();
+        }
+        Text
+        {
+            id: debug_network
+            text: qsTr("text")
+        }
+        Connections
+        {
+            target: logics
 
-  Button
-  {
-      text: qsTr("підключитися до гри")
-       onClicked:{ logics.bIsJoinGame();
-     debug_network.text = "підключення до гри"}
-  }
-  Button
-  {
-     text: qsTr("створити сервер")
-     onClicked:{ logics.bIsCreateGame();
-   debug_network.text = "створюємо гру"}
-  }
-  Text {
-      id: debug_network
-      text: qsTr("text")
-  }
- }
-
+        }
+    }
     Column
     {
         anchors.centerIn: parent
         Text
         {
-           anchors.horizontalCenter: parent.horizontalCenter
+            anchors.horizontalCenter: parent.horizontalCenter
             id: name
             font.bold: true
             text: qsTr("Bridge")
-            color: red
+            color: "red"
         }
         Button
         {
@@ -53,10 +56,9 @@ Window{
             onClicked: debug.text = "створення гри ще не доступно"
             onDoubleClicked: debug.text= "потерпиш трохи, соси хуй!"
         }
-
         Button
         {
-           anchors.horizontalCenter: parent.horizontalCenter
+            anchors.horizontalCenter: parent.horizontalCenter
             text: "Налаштування"
             onClicked: debug.text = "налаштування гри ще не готові"
         }
@@ -65,6 +67,7 @@ Window{
             id: debug
             text: qsTr("Debug_text")
         }
-        }
     }
+
+}
 

@@ -6,15 +6,15 @@ appEngine::appEngine(QObject *parent)
 
 }
 
-bool appEngine::bIsCreateGame(short int iAmountPlayers)
+void appEngine::bIsCreateGame(short int iAmountPlayers)
 {
-    Server *server = new Server;
-    return true;
+    server = new Server;
+    delete server;
 }
 
-bool appEngine::bIsJoinGame()
+void appEngine::bIsJoinGame()
 {
-    Client *client = new Client;
-
-    return true;
+    client = new Client;
+    delete client;
+    emit onJoin();
 }
