@@ -1,8 +1,9 @@
 import QtQuick 2.12
-//import QMLIntergrationQt6 1.0
 import QtQuick.Window 2.12
 import Qt.labs.qmlmodels 1.0
 import QtQuick.Controls
+//import Glogic 1.0
+
 //кароч, тебе подсказда на будущие, если будут проблемы с CMake "такое бывает при добаление новых файлов" то зайди в "CMakeLists.txt"
 //и добавь в ручную название файлов, хз но скорее всего коментарии я там не оставлю, по месту разберешься, но у меня отдельное место, у тебя отдельно
 
@@ -15,28 +16,40 @@ Window{
     height: 500
     visible: true
     color: "aqua"
+
+    Connections{
+        target: logics
+        onJoin:{
+            debug_network.text = "onJoin"
+        }
+
+    }
+
     Column
     {
         Button
         {
             text: qsTr("підключитися до гри")
-            onClicked: logics.bIsJoinGame();
+            onClicked: {
+                logics.bIsJoinGame();
+                debug_network.text = logics.get();
+            }
         }
         Button
         {
             text: qsTr("створити сервер")
-            onClicked: logics.bIsCreateGame();
+            onClicked: {
+
+                logics.bIsCreateGame();
+            debug_network.text = logics.get();
+            }
         }
         Text
         {
             id: debug_network
             text: qsTr("text")
         }
-        Connections
-        {
-            target: logics
 
-        }
     }
     Column
     {

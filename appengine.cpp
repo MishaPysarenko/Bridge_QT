@@ -11,6 +11,7 @@ void appEngine::bIsCreateGame(short int iAmountPlayers)
 {
     server = new Server;
     delete server;
+    nCounter--;
 }
 
 void appEngine::bIsJoinGame()
