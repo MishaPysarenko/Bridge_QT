@@ -1,4 +1,5 @@
 #include "appengine.h"
+#include <QDebug>
 
 appEngine::appEngine(QObject *parent)
     : QObject{parent}
@@ -16,5 +17,12 @@ void appEngine::bIsJoinGame()
 {
     client = new Client;
     delete client;
-    emit onJoin();
+    nCounter++;
+    //qDebug() << "bIsJoinGame";
+    emit join();
+}
+
+int appEngine::get()
+{
+    return nCounter;
 }
