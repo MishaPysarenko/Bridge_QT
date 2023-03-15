@@ -5,12 +5,12 @@ CGameEngine::CGameEngine()
 
 }
 
-void CGameEngine::VShuffleADeckOfCards(TGameLog* log)
+void CGameEngine::VShuffleADeckOfCards(TGameLog* log)//Перемешать колоду карт
 {
 
 }
 
-void CGameEngine::VTurnOverShuffleADeckOfCards(TGameLog* log)
+void CGameEngine::VTurnOverShuffleADeckOfCards(TGameLog* log)//Перевернуть и перемешать колоду карт
 {
 
 }

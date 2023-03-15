@@ -2,8 +2,7 @@ import QtQuick 2.12
 import QtQuick.Window 2.12
 import Qt.labs.qmlmodels 1.0
 import QtQuick.Controls
-//import Glogic 1.0
-
+import logic 1.0
 //кароч, тебе подсказда на будущие, если будут проблемы с CMake "такое бывает при добаление новых файлов" то зайди в "CMakeLists.txt"
 //и добавь в ручную название файлов, хз но скорее всего коментарии я там не оставлю, по месту разберешься, но у меня отдельное место, у тебя отдельно
 
@@ -17,12 +16,20 @@ Window{
     visible: true
     color: "aqua"
 
-    Connections{
+    AppEngine
+    {
+        id:logics
+    }
+
+    Connections
+    {
         target: logics
         onJoin:{
-            debug_network.text = "onJoin"
+            debug_network.text = "join"
         }
-
+        onCreate:{
+            debug_network.text = "onCreate"
+        }
     }
 
     Column
@@ -31,8 +38,7 @@ Window{
         {
             text: qsTr("підключитися до гри")
             onClicked: {
-                logics.bIsJoinGame();
-                debug_network.text = logics.get();
+                logics.JoinGame();
             }
         }
         Button
@@ -40,8 +46,7 @@ Window{
             text: qsTr("створити сервер")
             onClicked: {
 
-                logics.bIsCreateGame();
-            debug_network.text = logics.get();
+                logics.CreateGame();
             }
         }
         Text

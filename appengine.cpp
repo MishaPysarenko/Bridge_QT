@@ -7,23 +7,26 @@ appEngine::appEngine(QObject *parent)
 
 }
 
-void appEngine::bIsCreateGame(short int iAmountPlayers)
+void appEngine::CreateGame(short int iAmountPlayers)
 {
     server = new Server;
-    delete server;
-    nCounter--;
+    emit create();
 }
 
-void appEngine::bIsJoinGame()
+void appEngine::JoinGame()
 {
     client = new Client;
-    delete client;
-    nCounter++;
-    //qDebug() << "bIsJoinGame";
     emit join();
 }
 
-int appEngine::get()
+void appEngine::DeleteConnect()
 {
-    return nCounter;
+    delete client;
+    emit deletConnetc();
+}
+
+void appEngine::DeleteGame()
+{
+    delete server;
+    emit deletGame();
 }

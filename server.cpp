@@ -44,5 +44,9 @@ void Server::SendToClient(TGameLog log)
     QDataStream out(&Data, QIODevice::WriteOnly);
     out.setVersion(QDataStream::Qt_6_6);
     //out << log;
-    socket->write(Data);
+    //socket->write(Data);
+    for(int i = 0; i < Sockets.size(); i++)
+    {
+        Sockets[i]->write(Data);
+    }
 }

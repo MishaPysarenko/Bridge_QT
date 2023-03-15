@@ -13,20 +13,31 @@ class appEngine : public QObject
     QML_ELEMENT
     Server *server;
     Client *client;
-    int nCounter = 0;
 
 public:
     explicit appEngine(QObject *parent = nullptr);
-    Q_INVOKABLE int get();
 
 public slots:
-    void bIsJoinGame();
-    void bIsCreateGame(short int iAmountPlayers = 2);
+    //
+    void JoinGame();
+    void CreateGame(short int iAmountPlayers = 2);
+    void DeleteConnect();
+    void DeleteGame();
+
+    //
+
+
 
 signals:
+
     void erorr();
-    void Create();
+
+    void create();
     void join();
+    void deletGame();
+    void deletConnetc();
+
+
 };
 
 #endif // APPENGINE_H

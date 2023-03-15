@@ -7,6 +7,9 @@ class Client
 {
 public:
     Client();
+public slots:
+    void send(QByteArray);
+signals:
 
 };
 
