@@ -19,6 +19,7 @@ qt_add_executable(appBridge
     cgameengine.h
     cgameengine.cpp
     tgamelog.h
+    SettingMacros.h
 )
 
 qt_add_qml_module(appBridge

@@ -1,0 +1,6 @@
+#ifndef SETTINGMACROS_H
+#define SETTINGMACROS_H
+
+#define PORT 6500
+
+#endif // SETTINGMACROS_H

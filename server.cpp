@@ -1,14 +1,11 @@
 #include "server.h"
-
+#include "SettingMacros.h"
 Server::Server()
 {
-    if(this->listen(QHostAddress::Any, 65000))
+    QObject::connect(this, SIGNAL(createErorr()), &appEngine, SLOT(ErorrCreate()));
+    if(!this->listen(QHostAddress::Any, PORT))
     {
-        //
-    }
-    else
-    {
-        //
+
     }
 }
 

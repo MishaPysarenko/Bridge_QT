@@ -19,6 +19,10 @@ public:
 
 public slots:
     //
+    void ErorrConnect();
+    void ErorrCreate();
+
+    //
     void JoinGame();
     void CreateGame(short int iAmountPlayers = 2);
     void DeleteConnect();

@@ -4,6 +4,7 @@
 #include <QTcpSocket>
 #include <QVector>
 #include "tgamelog.h"
+
 class Server : public QTcpServer
 {
 public:
@@ -16,6 +17,8 @@ private:
 public slots:
     void incomingConnetion(qintptr socketDescription);
     void slotReadyRead();
+signals:
+    void createErorr();
 };
 
 #endif // SERVER_H
