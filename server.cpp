@@ -2,8 +2,11 @@
 #include "SettingMacros.h"
 Server::Server()
 {
-    QObject::connect(this, SIGNAL(createErorr()), &appEngine, SLOT(ErorrCreate()));
-    if(!this->listen(QHostAddress::Any, PORT))
+    if(this->listen(QHostAddress::Any, PORT))
+    {
+
+    }
+    else
     {
 
     }

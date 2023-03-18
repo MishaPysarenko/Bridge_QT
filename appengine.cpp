@@ -10,6 +10,7 @@ appEngine::appEngine(QObject *parent)
 void appEngine::CreateGame(short int iAmountPlayers)
 {
     server = new Server;
+
     emit create();
 }
 

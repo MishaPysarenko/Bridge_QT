@@ -7,11 +7,7 @@ int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
 
-    appEngine AppEngine;
-
     qmlRegisterType<appEngine>("logic", 1, 0, "AppEngine");
-
-
 
     QQmlApplicationEngine engine;
     const QUrl url(u"qrc:/Bridge/main.qml"_qs);
