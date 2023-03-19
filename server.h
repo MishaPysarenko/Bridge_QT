@@ -15,8 +15,10 @@ private:
     QByteArray Data;
     void SendToClient(TGameLog log);
 public slots:
+    bool CreateGame();
     void incomingConnetion(qintptr socketDescription);
-    void slotReadyRead();
+    void slotReady();
+    void DeleteGame();
 signals:
     void createErorr();
 };
